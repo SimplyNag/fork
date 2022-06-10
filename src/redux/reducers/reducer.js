@@ -1,16 +1,23 @@
-import { combineReducers } from 'redux';
-import { connect } from 'react-redux';
+import React from 'react';
+import { PERSONAL_FORM, PROFESSIONAL_FORM } from '../actions/actionType';
 
-const INITIAL_STATE = {};
+const INITIAL_STATE = {
+  state: '',
+};
 
-const exampleReducer = (state = INITIAL_STATE, action) => {
+export const personalFormReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
+  case PERSONAL_FORM:
+    return { state: action.state };
   default:
     return state;
   }
 };
-
-const rootReducer = combineReducers({ exampleReducer });
-
-export default rootReducer;
-export default connect(mapStateToProps, mapDispatchToProps)(Component);
+export const professionalFormReducer = (state = INITIAL_STATE, action) => {
+  switch (action.type) {
+  case PROFESSIONAL_FORM:
+    return { state: action.state };
+  default:
+    return state;
+  }
+};

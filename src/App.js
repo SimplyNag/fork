@@ -4,13 +4,11 @@ import { Provider } from 'react-redux';
 import PersonalForm from './pages/PersonalForm';
 import ProfessionalForm from './pages/ProfessionalForm';
 import FormDataDisplay from './pages/FormDataDisplay';
-import store from './redux/store/store';
+import store from './redux/store';
 
 class App extends Component {
   render() {
-    <Provider store={ store }>
-      <App />
-    </Provider>;
+    <App />;
     return (
       <Switch>
         <Route exact path="/" component={ PersonalForm } />

@@ -5,21 +5,6 @@ import TextArea from '../components/TextArea';
 import Button from '../components/Button';
 
 class ProfessionalForm extends Component {
-  constructor() {
-    super();
-    this.state = {
-      curriculo: '',
-      cargo: '',
-      descricao: '',
-    };
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange({ target }) {
-    const { name, value } = target;
-    this.setState({ [name]: value });
-  }
-
   render() {
     const { curriculo, cargo, descricao } = this.state;
     return (

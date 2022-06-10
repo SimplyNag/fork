@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Input from '../components/Input';
 import Button from '../components/Button';
 import Select from '../components/Select';
+import { PERSONAL_FORM } from '../redux/actions/actionType';
 
 class PersonalForm extends Component {
   constructor() {
@@ -17,7 +18,7 @@ class PersonalForm extends Component {
       estado: '',
     };
 
-    this.handleChange = this.handleChange.bind(this);
+    this.handleChange = this.handleChange(bind);
   }
 
   handleChange({ target }) {
@@ -26,6 +27,7 @@ class PersonalForm extends Component {
   }
 
   render() {
+    const { newAction } = this.props;
     const { nome, email, cpf, endereco, cidade, estado } = this.state;
     const states = [
       'Rio de Janeiro',
@@ -84,11 +86,16 @@ class PersonalForm extends Component {
         <Button
           type="button"
           label="Enviar"
-          onClick={ () => console.log('Ao clicar, envie a informação do formulário') }
+          onClick={ () => this.newAction }
+
         />
       </fieldset>
     );
   }
 }
+
+const mapDispatchToProps = (action) => ({
+
+});
 
 export default PersonalForm;
